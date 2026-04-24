@@ -24,7 +24,7 @@ menustart = InlineKeyboardMarkup(
 
 @dp.message_handler(state=None)
 async def bot_echo(message: types.Message):
-    text = f"Assalomu alaykum, o'yinni boshlash uchun quyidagi link orqali kiring"
+    text = f"Assalomu alaykum, o'yinni boshlash uchun quyidagi link orqali kiring 👇"
     await message.answer(text,reply_markup=menustart)
 
 
