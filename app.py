@@ -14,7 +14,7 @@ dp = Dispatcher(bot, storage=storage)
 menustart = InlineKeyboardMarkup(
     inline_keyboard = [
         [
-            InlineKeyboardButton(text="KIRISH",
+            InlineKeyboardButton(text="O'yinni boshlash",
                                  web_app=WebAppInfo(url="https://register-sayt-bfa056d0e2fe.herokuapp.com/"),
                                  )
          ]
@@ -24,7 +24,8 @@ menustart = InlineKeyboardMarkup(
 
 @dp.message_handler(state=None)
 async def bot_echo(message: types.Message):
-    await message.answer(message.text,reply_markup=menustart)
+    text = f"Assalomu alaykum, hurmatli {message.from_user.first_name + message.from_user.last_name}, o'yinni boshlash uchun quyidagi link orqali kiring"
+    await message.answer(text,reply_markup=menustart)
 
 
 if __name__ == '__main__':
